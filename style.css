@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+
+    text-align: center;
+}
+header{
+    padding: 30px;
+}
+#heading{
+    border-radius: 50%;
+}
+h1{
+    display: inline;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+}
+#game{
+    margin-top: 50px;
+    padding: 20px;
+    height: 70vmin;
+    width: 80vmin;
+    border-radius: 2rem;
+    border: 3px solid  rgba(0, 0, 0, 0.845);
+}
+#box{
+    height: 22vmin;
+    width: 22vmin;
+    border-radius: 1rem ;
+    border: 3px solid transparent;
+    margin: 5px;
+    transition: transform 0.3s ease;
+    color: black;
+    font-size: 8vmin;         /* scale text properly */
+    font-weight: 550;
+    line-height: 22vmin;       /* vertically center text */
+    text-align: center;        /* horizontally center text */
+    vertical-align: middle;
+}
+#box:hover{
+    transform: scale(1.01);
+    border: 3px solid black;
+}
+.Show-turn{
+    font-weight: bold;
+}
+#change_theme ,#newgame{
+    height: 5vh;
+    width: 5vw;
+    border-radius: 0.5rem ;
+    border: 2px solid black;
+    font-weight: 550;
+    margin: 5px;
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15vh;
+    right: 10vw;
+    border: 2px solid black;
+    border-radius: 1rem;
+    padding: 20px;
+}
+#display{
+    height: 15vh;
+    width: 15vw;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 540;
+    border-radius: 1rem;
+    top: 15vh;
+    left: 5vw;
+}
+
+.count1{
+    margin-top: 10px
+}
+
+
+#reset-button{
+    border: 2px solid  rgba(0, 0, 0, 0.845);
+    height: 60px;
+    width: 10vw;
+    border-radius: 1rem;
+    margin-top:20px;
+    transition: transform 0.3s ease;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+#reset-button:active{
+    transform: translateY(-1px);
+}
+
+
+@keyframes winner_animation {
+    
+    52%{
+        font-size: 1.5rem;
+    }
+    55%{
+        font-size: 1.7rem;
+    }
+    57%{
+        font-size: 1.5rem;
+    }
+    60%{
+        font-size: 1.7rem;
+    }
+    62%{
+        font-size: 1.5rem;
+    }
+    
+    
+    
+}
+.winner{
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    animation: winner_animation 6s ease 0s infinite forwards ;
+}
+
+.theme_buttons{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme_buttons button{
+    height: 4vh;
+    width: 5vw;
+    border-radius: 0.5rem ;
+    border: 2px solid black;
+    font-weight: 550;
+    margin: 4px;
+    margin-left: 10px;
+}
+.theme1{
+    background-color: #4c5760;
+    color: white;
+}
+.theme2{
+    background-color: #b5c4cb ;
+    color:black;
+}
+.theme3{
+    background-color: #5f7566;
+    color: white;
+}
+.theme4{
+    background-color: #5d4f45ef;
+    color: white;
+}
+.theme5{
+    background-color: #63665a;
+    color: white;
+}
+
+.C1{
+    background-color: #4c5760;
+}
+.C2{
+    background-color:  #93a8ac;
+}
+.C3{
+    background-color: #b0423eca;
+}
+.C4{
+    background-color: #A59e8c;
+}
+
+
+@media (max-width : 1024px ) and (min-width:600px) {
+    #game{
+        margin-top: 200px;
+    }
+    #buttons{
+        width: 15vw;
+        height: auto;
+        top: 100px;
+        
+    }
+    #display{
+        width: 20vw;
+        height: 15vw;
+        top: 100px;
+    }
+    #buttons button{
+        width: 60%;
+        height: 40px;
+    }
+    .theme_buttons ul {
+        list-style: none;
+        width: 150px;
+    }
+}
+@media (max-height : 600px) {
+    #buttons{
+        right: 6vh;
+    }
+    #game{
+        margin: -20px 0 0 200px;
+        
+    }
+    .container{
+        flex-direction: row;
+    }
+    #reset-button{
+        margin: 80px 0 0 100px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    /* Main container and layout adjustments */
+    .container {
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+        justify-content: flex-start;
+        height: auto;
+    }
+
+    /* Game board adjustments */
+    #game {
+        height: 70vw; /* Use viewport width for a more fluid size */
+        width: 70vw;
+        padding: 10px;
+    }
+
+    /* Individual box adjustments */
+    #box {
+        height: 20vw;
+        width: 20vw;
+        font-size: 8vw;
+        line-height: 20vw;
+        margin: 1vw;
+    }
+
+    /* Info display and button panel positioning */
+    #display,
+    #buttons {
+        position: static; /* Removes fixed positioning */
+        margin-top: 20px;
+         /* Takes up most of the screen width */
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+    #buttons{
+        order: 1;
+        width: 30%;
+    }
+    #display{
+        order: 2;
+        width: 40%;
+    }
+    #game{
+        order: 3;
+    }
+    #reset-button{
+        order: 4;
+    }
+
+    /* Buttons within the panel */
+    #change_theme,
+    #newgame {
+        height: 8vw; /* Use viewport width for height */
+        width: 25vw; /* Make buttons a relative size */
+        margin: 5px;
+    }
+
+    /* Theme buttons within the dropdown */
+    .theme_buttons button {
+        height: 8vw;
+        width: 25vw;
+        margin: 5px;
+    }
+
+    /* Reset button */
+    #reset-button {
+        height: 10vw;
+        width: 40vw;
+        font-size: 1rem;
+        margin: 20px 0;
+    }
+
+    /* Font size for winner/turn text */
+    .winner,
+    .turn-display {
+        font-size: 1rem;
+    }
+
+    /* Heading font size */
+    h1 {
+        font-size: 1.5rem;
+    }
+}
